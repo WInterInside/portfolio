@@ -1,0 +1,385 @@
+.hero
+	position: relative;
+	min-height: 780px;
+	overflow: hidden;
+	background: radial-gradient(circle at 80% 45%, #e5f0f8 0, transparent 38%), linear-gradient(150deg, #f9fbfd 0%, #eef4f8 75%, #e9f0f7 100%);
+
+.hero::after
+	position: absolute;
+	right: -12%;
+	bottom: -260px;
+	width: 75%;
+	height: 460px;
+	border-radius: 50%;
+	background: #dbeaf4;
+	filter: blur(100px);
+	content: '';
+	opacity: 0.6;
+
+.hero__inner
+	position: relative;
+	z-index: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	min-height: 780px;
+	padding-top: 90px;
+
+.hero__copy
+	position: relative;
+	z-index: 3;
+	padding-bottom: 42px;
+
+.hero__title
+	margin: 0;
+	font-size: clamp(58px, 6.55vw, 100px);
+	font-weight: 500;
+	line-height: 0.98;
+	letter-spacing: -0.075em;
+
+.hero__title > span:not(.hero__period)
+	color: #86abc6;
+
+.hero__period
+	color: #aa9be8;
+
+.hero__description
+	max-width: 490px;
+	margin: 30px 0 36px;
+	color: #526a7b;
+	font-size: 18px;
+	line-height: 1.65;
+
+.hero__actions
+	display: flex;
+	align-items: center;
+	gap: 14px;
+
+.hero__actions .button
+	width: 224px;
+
+.button--telegram
+	border-color: #b9d5e7;
+	background: #e2eff8;
+	color: #1c4d6d;
+
+.button--telegram:hover
+	border-color: #8fbede;
+	background: #d5e9f6;
+
+.button__telegram-icon
+	width: 20px;
+	height: 20px;
+	flex: none;
+
+.hero__bottom
+	position: absolute;
+	inset: auto 0 33px;
+	display: flex;
+	justify-content: space-between;
+	color: #8296a6;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.17em;
+
+.hero__scroll-note
+	display: flex;
+	gap: 20px;
+	align-items: center;
+
+.hero__scroll-note span
+	font-size: 20px;
+	font-weight: 400;
+	animation: nudge-down 2.4s ease-in-out infinite;
+
+.hero__glow
+	position: absolute;
+	pointer-events: none;
+	border-radius: 50%;
+	filter: blur(20px);
+
+.hero__glow--one
+	top: 15%;
+	right: 14%;
+	width: 240px;
+	height: 240px;
+	background: rgba(197, 188, 232, 0.28);
+
+.hero__glow--two
+	right: 42%;
+	bottom: 12%;
+	width: 160px;
+	height: 160px;
+	background: rgba(155, 200, 232, 0.23);
+
+.hero-art
+	position: relative;
+	width: 100%;
+	max-width: 620px;
+	height: 550px;
+	justify-self: end;
+	perspective: 1100px;
+
+.hero-art__orbit
+	position: absolute;
+	border: 1px solid rgba(126, 164, 192, 0.21);
+	border-radius: 50%;
+
+.hero-art__orbit--outer
+	inset: 0 0 0 -10%;
+	transform: rotate(-22deg);
+	animation: orbit 32s linear infinite;
+
+.hero-art__orbit--inner
+	inset: 55px 70px;
+	transform: rotate(34deg);
+	animation: orbit 27s linear reverse infinite;
+
+.hero-art__spark
+	position: absolute;
+	color: #96acd6;
+	font-size: 32px;
+	animation: float 5s ease-in-out infinite;
+
+.hero-art__spark--one
+	top: 30px;
+	right: 85px;
+
+.hero-art__spark--two
+	bottom: 70px;
+	left: 35px;
+	color: #91c9e4;
+	font-size: 24px;
+	animation-delay: -2s;
+
+.hero-art__card
+	position: absolute;
+	box-shadow: 0 35px 80px rgba(47, 79, 103, 0.12);
+
+.hero-art__card--back
+	top: 58px;
+	right: 62px;
+	width: 330px;
+	height: 410px;
+	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-radius: 28px;
+	background: #142331 url('../assets/winter-forest-dark.png') center / cover no-repeat;
+	transform: rotate(13deg) translateZ(-40px);
+	animation: float-back 7s ease-in-out infinite;
+
+.hero-art__card-label
+	position: absolute;
+	top: 22px;
+	left: 22px;
+	color: #e5f1f8;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+
+.hero-art__card--front
+	top: 120px;
+	left: 12px;
+	width: 355px;
+	height: 360px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-radius: 24px;
+	background: rgba(250, 253, 255, 0.54);
+	backdrop-filter: blur(12px);
+	transform: rotate(-7deg);
+	animation: float-front 6s ease-in-out infinite;
+
+.hero-art__card-top, .hero-art__card-bottom
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #718da1;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.11em;
+
+.hero-art__card-dots
+	color: #aabce0;
+	letter-spacing: 3px;
+
+.hero-art__card-word
+	position: relative;
+	z-index: 2;
+	color: #17232e;
+	font-size: 56px;
+	font-weight: 600;
+	line-height: 0.95;
+	letter-spacing: -0.08em;
+
+.hero-art__card-word em
+	color: #8dbad7;
+	font-style: normal;
+
+.hero-art__card-bottom
+	padding-top: 16px;
+	border-top: 1px solid #d8e4ed;
+
+.hero-art__card-bottom span
+	font-size: 22px;
+	font-weight: 400;
+
+.hero-art__wave
+	position: absolute;
+	top: 90px;
+	right: 30px;
+	display: flex;
+	align-items: end;
+	gap: 6px;
+	height: 70px;
+	opacity: 0.7;
+
+.hero-art__wave i
+	width: 6px;
+	height: 28%;
+	border-radius: 6px;
+	background: #9bc8e8;
+	animation: wave 1.5s ease-in-out infinite alternate;
+
+.hero-art__wave i:nth-child(2), .hero-art__wave i:nth-child(6)
+	height: 65%;
+	animation-delay: -0.3s;
+
+.hero-art__wave i:nth-child(3), .hero-art__wave i:nth-child(5)
+	height: 100%;
+	animation-delay: -0.6s;
+
+.hero-art__wave i:nth-child(4)
+	height: 48%;
+	animation-delay: -0.9s;
+
+.hero-art__floating-label
+	position: absolute;
+	z-index: 5;
+	right: -15px;
+	bottom: 42px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 13px 18px;
+	border: 1px solid white;
+	border-radius: 100px;
+	background: rgba(255, 255, 255, 0.85);
+	box-shadow: 0 14px 35px rgba(69, 105, 131, 0.1);
+	color: #526e82;
+	font-size: 12px;
+	font-weight: 700;
+	transform: rotate(6deg);
+	animation: float 5s ease-in-out infinite -1.5s;
+
+.hero-art__floating-label span
+	color: #a397d7;
+	font-size: 19px;
+
+@keyframes orbit
+	to
+		transform: rotate(360deg);
+
+@keyframes float
+	50%
+		transform: translateY(-12px);
+
+@keyframes float-front
+	50%
+		transform: rotate(-5deg) translateY(-15px);
+
+@keyframes float-back
+	50%
+		transform: rotate(11deg) translateY(13px) translateZ(-40px);
+
+@keyframes wave
+	to
+		height: 20%;
+
+@keyframes nudge-down
+	50%
+		transform: translateY(7px);
+
+@media (max-width: 1100px)
+	.hero, .hero__inner
+		min-height: 690px;
+
+	.hero__title
+		font-size: clamp(54px, 6.7vw, 80px);
+
+	.hero-art
+		transform: scale(0.8);
+		transform-origin: center right;
+
+@media (max-width: 767px)
+	.hero, .hero__inner
+		min-height: 820px;
+
+	.hero__inner
+		display: block;
+		padding-top: 150px;
+
+	.hero__copy
+		padding-bottom: 0;
+
+	.hero__title
+		font-size: clamp(53px, 12vw, 80px);
+
+	.hero__description
+		max-width: 570px;
+		margin: 22px 0 25px;
+		font-size: 16px;
+
+	.hero-art
+		position: absolute;
+		right: -62px;
+		bottom: 4px;
+		width: 550px;
+		height: 430px;
+		transform: scale(0.65);
+		transform-origin: bottom right;
+		opacity: 0.95;
+
+	.hero__bottom
+		bottom: 24px;
+
+	.hero__scroll-note
+		display: none;
+
+@media (max-width: 450px)
+	.hero, .hero__inner
+		min-height: 775px;
+
+	.hero__inner
+		padding-top: 132px;
+
+	.hero__title
+		font-size: clamp(48px, 12.3vw, 59px);
+
+	.hero__description
+		font-size: 15px;
+		line-height: 1.55;
+
+	.hero__actions
+		align-items: stretch;
+		flex-direction: column;
+		gap: 10px;
+
+	.hero__actions .button
+		width: min(100%, 280px);
+		gap: 12px;
+		min-height: 54px;
+		padding-inline: 14px;
+		font-size: 12px;
+
+	.hero-art
+		right: -72px;
+		bottom: -22px;
+		transform: scale(0.52);
+
+@media (max-width: 374px)
+	.hero__title
+		font-size: 40px;

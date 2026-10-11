@@ -1,0 +1,93 @@
+.contact
+	position: relative;
+	overflow: hidden;
+	background: #17232e;
+	color: #e9f0f7;
+
+.contact::before
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(rgba(155, 200, 232, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(155, 200, 232, 0.04) 1px, transparent 1px);
+	background-size: 48px 48px;
+	content: '';
+
+.contact__orb
+	position: absolute;
+	top: -38%;
+	right: -8%;
+	width: 75vw;
+	max-width: 900px;
+	aspect-ratio: 1;
+	border: 1px solid rgba(155, 200, 232, 0.23);
+	border-radius: 50%;
+	box-shadow: 0 0 0 85px rgba(155, 200, 232, 0.03), 0 0 0 180px rgba(155, 200, 232, 0.025), inset 0 0 130px rgba(155, 200, 232, 0.07);
+	animation: contact-pulse 7s ease-in-out infinite;
+
+.contact__orb::before, .contact__orb::after
+	position: absolute;
+	inset: 12%;
+	border: 1px solid rgba(197, 188, 232, 0.2);
+	border-radius: 50%;
+	content: '';
+
+.contact__orb::after
+	inset: 32%;
+	background: radial-gradient(circle, rgba(155, 200, 232, 0.12), transparent);
+
+.contact__inner
+	position: relative;
+	z-index: 1;
+	padding-block: 35px 45px;
+
+.contact .eyebrow
+	color: #a4bbcc;
+
+.contact__title
+	margin: 0;
+	font-size: clamp(52px, 7.5vw, 104px);
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: -0.07em;
+
+.contact__title em
+	color: #9bc8e8;
+	font-style: normal;
+
+.contact__description
+	margin: 28px 0 34px;
+	color: #b2c3d0;
+	font-size: 17px;
+
+.contact__actions
+	display: flex;
+	align-items: center;
+	gap: 30px;
+
+@keyframes contact-pulse
+	50%
+		transform: scale(1.045);
+		opacity: 0.75;
+
+@media (max-width: 767px)
+	.contact__inner
+		padding-block: 25px 35px;
+
+	.contact__title
+		font-size: clamp(50px, 11.2vw, 80px);
+
+	.contact__description
+		font-size: 15px;
+
+	.contact__orb
+		top: 3%;
+		right: -55%;
+		width: 100vw;
+
+@media (max-width: 430px)
+	.contact__actions
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 22px;
+
+	.contact__title
+		font-size: 47px;

@@ -1,0 +1,211 @@
+{
+	"siteName": "WinterInside",
+	"pageTitle": "WinterInside — фронтенд-разработчик",
+	"pageDescription": "Портфолио WinterInside: выразительные интерфейсы, адаптивные сайты и интерактивные веб-проекты.",
+	"projects": [
+		{
+			"slug": "sinaps",
+			"number": "01",
+			"name": "Sinaps",
+			"category": "Концепт · интерактивный сайт",
+			"description": "Футуристичный интерфейс о симуляции навыков: крупная типографика, модульная графика и ощущение цифрового продукта.",
+			"stack": "HTML · CSS · JavaScript",
+			"artCaption": "skill simulation / 2025",
+			"url": "https://github.com/WInterInside/sinaps-v2",
+			"coverImage": "sinaps-cover.jpg",
+			"fullImage": "sinaps-full.jpg"
+		},
+		{
+			"slug": "evolution",
+			"number": "02",
+			"name": "Evolution",
+			"category": "Концепт · интерактивный сайт",
+			"description": "Экспериментальный мануал по созданию нейрочип-капсулы с последовательным сценарием и интерактивным выбором.",
+			"stack": "HTML · CSS · JavaScript",
+			"artCaption": "configuration / future",
+			"url": "https://github.com/WInterInside/evolution",
+			"coverImage": "evolution-cover.jpg",
+			"fullImage": "evolution-full.jpg"
+		},
+		{
+			"slug": "geo-shield",
+			"number": "03",
+			"name": "Геощит",
+			"category": "Корпоративный сайт",
+			"description": "Сайт компании по разведке и очистке местности: услуги, проекты и ясная структура для обращения клиентов.",
+			"stack": "HTML · CSS · JavaScript",
+			"artCaption": "точность в деталях",
+			"url": "https://github.com/WInterInside/geo-shield",
+			"coverImage": "geo-shield-cover.jpg",
+			"fullImage": "geo-shield-full.jpg"
+		},
+		{
+			"slug": "tritet",
+			"number": "04",
+			"name": "Тритэт",
+			"category": "Студия интерьеров",
+			"description": "Презентационный сайт интерьерной студии с акцентом на работы, услуги и визуальную иерархию.",
+			"stack": "HTML · CSS · JavaScript",
+			"artCaption": "пространство для идей",
+			"url": "https://github.com/WInterInside/tritet",
+			"coverImage": "tritet-cover.jpg",
+			"fullImage": "tritet-full.jpg"
+		},
+		{
+			"slug": "perfume",
+			"number": "05",
+			"name": "Perfume Avenue",
+			"category": "Каталог · парфюмерия",
+			"description": "Витрина оптовой парфюмерии с каталогом, брендами и понятным маршрутом к запросу цены.",
+			"stack": "HTML · CSS · JavaScript",
+			"artCaption": "avenue / collection",
+			"url": "https://github.com/WInterInside/perfume-avenu",
+			"coverImage": "perfume-cover.jpg",
+			"fullImage": "perfume-full.jpg"
+		},
+		{
+			"slug": "fishart",
+			"number": "06",
+			"name": "FishArt Tattoo",
+			"category": "Портфолио · тату-студия",
+			"description": "Сайт тату-студии с портфолио работ, выразительной типографикой и удобным выходом на консультацию.",
+			"stack": "HTML · SCSS · JavaScript · Gulp",
+			"artCaption": "tattoo / portfolio",
+			"url": "https://github.com/WInterInside/fishart-tattoo",
+			"coverImage": "fishart-cover.jpg",
+			"fullImage": "fishart-full.jpg"
+		},
+		{
+			"slug": "kazimir",
+			"number": "07",
+			"name": "Kazimir Presentation",
+			"category": "Типографика · презентация",
+			"description": "Анимированная презентация шрифта Kazimir: крупная типографика, движение и композиция вокруг самого шрифта.",
+			"stack": "HTML · SCSS · JavaScript · Gulp",
+			"artCaption": "type / motion",
+			"url": "https://github.com/WInterInside/kazimir-presentation-statick",
+			"coverImage": "kazimir-cover.jpg",
+			"fullImage": "kazimir-full.jpg"
+		}
+	],
+	"skillGroups": [
+		{
+			"title": "Интерфейсы",
+			"items": [
+				"HTML5",
+				"CSS3",
+				"Адаптивная вёрстка",
+				"Семантическая разметка",
+				"БЭМ",
+				"JavaScript ES6+",
+				"SCSS / Sass"
+			]
+		},
+		{
+			"title": "Фреймворки и язык",
+			"items": ["React", "Astro", "TypeScript"]
+		},
+		{
+			"title": "Сборка и работа в команде",
+			"items": ["Git", "Gulp", "Vite", "Nunjucks", "Twig", "Tilda", "jQuery"]
+		}
+	],
+	"jobs": [
+		{
+			"company": "Ancros",
+			"period": "Май 2023 — сейчас",
+			"position": "Frontend-разработчик",
+			"description": "Разработка новых интерфейсов и поддержка действующих проектов, в том числе на React и Astro.",
+			"current": true
+		},
+		{
+			"company": "Веб-студия SHEER",
+			"period": "Ноябрь 2024 — апрель 2025 · октябрь 2021 — июнь 2022",
+			"position": "HTML-верстальщик",
+			"description": "Проектная вёрстка сайтов для клиентов студии."
+		},
+		{
+			"company": "IBRUSH",
+			"period": "Май — сентябрь 2022",
+			"position": "HTML-верстальщик",
+			"description": "Вёрстка новых страниц и доработка текущих проектов."
+		},
+		{
+			"company": "NOFT GAMES",
+			"period": "Февраль 2022",
+			"position": "Junior React Developer",
+			"description": "Вёрстка React-компонентов."
+		},
+		{
+			"company": "VOЛЬТ",
+			"period": "Ноябрь 2021 — февраль 2022",
+			"position": "Frontend-разработчик",
+			"description": "Разработка сайта, настройка хостинга, публикация и поддержка."
+		},
+		{
+			"company": "Частная практика",
+			"period": "Январь — март 2020",
+			"position": "Frontend-разработчик",
+			"description": "Самостоятельная разработка сайта."
+		},
+		{
+			"company": "Curacao IFFR",
+			"period": "Январь — февраль 2018",
+			"position": "HTML-верстальщик",
+			"description": "Проектная вёрстка сайта."
+		}
+	],
+	"featuredProjects": [
+		{
+			"slug": "bird",
+			"id": "bird",
+			"number": "02",
+			"label": "Экологический проект",
+			"titleFirst": "Целая",
+			"titleSecond": "птица.",
+			"description": "Полностью разработал сайт проекта защиты птиц от столкновений с окнами и перенёс его на Tilda. Экологическая идея здесь превращается в понятную историю и удобный путь к заказу.",
+			"url": "https://stopokno.ru/",
+			"buttonText": "Открыть в браузере",
+			"secondaryUrl": null,
+			"image": "stopokno-featured.png",
+			"imageAlt": "Воробей на ветке перед окном с защитной маркировкой для птиц",
+			"caption": "Разработка сайта / перенос на Tilda",
+			"stack": "Адаптивная вёрстка · Tilda · JavaScript",
+			"isGame": false
+		},
+		{
+			"slug": "perimeter",
+			"id": "perimeter",
+			"number": "03",
+			"label": "Браузерная игра",
+			"titleFirst": "Тихий",
+			"titleSecond": "кордон.",
+			"description": "Исследуйте Зону, выбирайте маршрут и собирайте артефакты. У игры собственный мир, система событий, инвентарь и звук.",
+			"url": "https://winterinside.github.io/SilentPerimeter/",
+			"buttonText": "Играть",
+			"secondaryUrl": "https://github.com/WInterInside/SilentPerimeter",
+			"image": "silent-perimeter-poster.webp",
+			"imageAlt": "Постер браузерной игры «Тихий кордон»: исследователь у костра на фоне Зоны",
+			"caption": "Последний переход / исследование и выбор",
+			"stack": "JavaScript · Canvas · SCSS · Gulp",
+			"isGame": true
+		},
+		{
+			"slug": "yoga",
+			"id": "yoga",
+			"number": "04",
+			"label": "Платформа для практики",
+			"titleFirst": "Unagrande",
+			"titleSecond": "YogaClub.",
+			"description": "В команде развиваю платформу онлайн-йоги: страницы занятий, курсов и материалов. Работа над проектом продолжается — важно, чтобы путь к практике был ясным и удобным на каждом устройстве.",
+			"url": "https://unagrande.yoga/",
+			"buttonText": "Открыть в браузере",
+			"secondaryUrl": null,
+			"image": "unagrande-yoga-scene.png",
+			"imageAlt": "Атмосферная иллюстрация занятий йогой в светлой студии",
+			"caption": "Командная разработка / онлайн-практика",
+			"stack": "Командная разработка · Адаптивные интерфейсы",
+			"isGame": false
+		}
+	]
+}

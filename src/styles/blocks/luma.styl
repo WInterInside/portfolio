@@ -1,0 +1,193 @@
+.featured-project--luma
+	background: radial-gradient(circle at 75% 42%, rgba(56, 116, 166, 0.36), transparent 43%), radial-gradient(circle at 86% 72%, rgba(226, 155, 92, 0.16), transparent 30%), #101c2b;
+
+.featured-project--luma .featured-project__label
+	color: #e3b78f;
+
+.featured-project--luma .featured-project__title em
+	color: #f3bd8b;
+
+.luma-feature__visual
+	border-color: rgba(168, 203, 232, 0.32);
+	background: rgba(214, 231, 250, 0.05);
+
+.luma-preview
+	position: relative;
+	isolation: isolate;
+	background: radial-gradient(circle at 55% 42%, rgba(95, 160, 219, 0.45), transparent 36%), linear-gradient(120deg, #0b1a2b 4%, #1a3b58 53%, #142334 100%);
+
+.luma-preview::before
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(rgba(231, 242, 255, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(231, 242, 255, 0.055) 1px, transparent 1px);
+	background-size: 48px 48px;
+	content: '';
+
+.luma-preview__glow
+	position: absolute;
+	width: 35%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	filter: blur(26px);
+	animation: luma-glow 7s ease-in-out infinite alternate;
+
+.luma-preview__glow--cool
+	top: 12%;
+	left: 13%;
+	background: rgba(74, 150, 245, 0.28);
+
+.luma-preview__glow--warm
+	right: 8%;
+	bottom: 5%;
+	background: rgba(247, 166, 91, 0.34);
+	animation-delay: -3.5s;
+
+.luma-preview__metric
+	position: absolute;
+	z-index: 1;
+	display: grid;
+	gap: 6px;
+	color: #e8f2fd;
+	font-size: 11px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+
+.luma-preview__metric strong
+	font-size: clamp(17px, 2vw, 26px);
+	font-weight: 500;
+	letter-spacing: -0.04em;
+	text-transform: none;
+
+.luma-preview__metric--temperature
+	top: 29%;
+	left: 7%;
+
+.luma-preview__metric--brightness
+	right: 7%;
+	bottom: 23%;
+
+.luma-preview__app
+	position: absolute;
+	z-index: 2;
+	top: 8%;
+	left: 50%;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	height: 84%;
+	aspect-ratio: 300 / 530;
+	padding: clamp(7px, 1.5vw, 14px);
+	border: 1px solid rgba(255, 255, 255, 0.92);
+	border-radius: clamp(10px, 1.8vw, 22px);
+	background: linear-gradient(150deg, rgba(253, 255, 255, 0.97), rgba(224, 237, 253, 0.96));
+	box-shadow: 0 25px 55px rgba(0, 9, 25, 0.45), inset 0 1px 0 white;
+	color: #4c617e;
+	transform: translateX(-50%) rotate(-4deg);
+
+.luma-preview__app-header
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: clamp(8px, 1vw, 13px);
+	letter-spacing: 0.1em;
+
+.luma-preview__window-controls
+	display: flex;
+	gap: 5px;
+
+.luma-preview__window-controls i
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #a7bfd6;
+
+.luma-preview__controls
+	display: flex;
+	justify-content: space-around;
+	flex: 1;
+	gap: 6px;
+	min-height: 0;
+	padding-top: 10%;
+
+.luma-preview__control
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	min-height: 0;
+
+.luma-preview__value
+	font-size: clamp(7px, 0.9vw, 12px);
+	font-weight: 700;
+	white-space: nowrap;
+
+.luma-preview__track
+	position: relative;
+	display: block;
+	width: clamp(15px, 2.5vw, 34px);
+	flex: 1;
+	border: 3px solid rgba(255, 255, 255, 0.94);
+	border-radius: 999px;
+	box-shadow: 0 4px 14px rgba(51, 94, 140, 0.2);
+
+.luma-preview__track--temperature
+	background: linear-gradient(#ffac75, #f4d6b7 37%, #b6d5f6 65%, #5da5f6);
+
+.luma-preview__track--brightness
+	background: linear-gradient(#fff0a1, #ffdd59, #f4a932);
+
+.luma-preview__thumb
+	position: absolute;
+	left: 50%;
+	width: clamp(23px, 3vw, 44px);
+	aspect-ratio: 1;
+	border: 2px solid white;
+	border-radius: 50%;
+	background: linear-gradient(#fff, #eef4fb);
+	box-shadow: 0 5px 13px rgba(39, 69, 105, 0.2);
+	transform: translate(-50%, -50%);
+
+.luma-preview__track--temperature .luma-preview__thumb
+	top: 48%;
+
+.luma-preview__track--brightness .luma-preview__thumb
+	top: 27%;
+
+.luma-preview__control-label
+	font-size: clamp(7px, 0.7vw, 10px);
+	white-space: nowrap;
+
+.luma-preview__switch
+	position: relative;
+	align-self: center;
+	width: clamp(30px, 4vw, 55px);
+	height: clamp(17px, 2.4vw, 29px);
+	margin-top: 10%;
+	border-radius: 999px;
+	background: linear-gradient(#67b7fc, #247af0);
+	box-shadow: 0 4px 12px rgba(50, 115, 215, 0.35);
+
+.luma-preview__switch i
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: white;
+	box-shadow: 0 2px 5px rgba(28, 65, 116, 0.2);
+
+@keyframes luma-glow
+	to
+		opacity: 0.55;
+		transform: translate(12px, -8px);
+
+@media (max-width: 700px)
+	.luma-preview
+		aspect-ratio: 1.4;
+
+	.luma-preview__metric, .luma-preview__control-label
+		display: none;
+
+	.luma-preview__controls
+		padding-top: 7%;

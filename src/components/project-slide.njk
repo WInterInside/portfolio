@@ -1,0 +1,57 @@
+<article
+	class="project-slide project-slide--{{ item.slug }}"
+	data-slide
+	data-state="{% if loop.first %}active{% else %}hidden{% endif %}"
+	aria-label="{{ item.number }}: {{ item.name }}"
+	{% if not loop.first %}aria-hidden="true" inert{% endif %}
+>
+	<div class="project-slide__visual" aria-hidden="true">
+		<span class="project-slide__visual-index">{{ item.number }} / SELECTED WORK</span>
+		<div class="project-slide__preview-frame">
+			<div class="project-slide__preview-bar"><i></i><i></i><i></i></div>
+			<img
+				class="project-slide__preview-image"
+				src="./assets/projects/{{ item.coverImage }}"
+				alt=""
+				width="1248"
+				height="720"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+		<span class="project-slide__visual-caption">{{ item.artCaption }}</span>
+	</div>
+	<div class="project-slide__content">
+		<div class="project-slide__meta">
+			<span>{{ item.category }}</span>
+			<span>{{ item.number }} / {{ projects.length | padNumber }}</span>
+		</div>
+		<div class="project-slide__copy">
+			<h3 class="project-slide__title">{{ item.name }}</h3>
+			<p class="project-slide__description">{{ item.description }}</p>
+		</div>
+		<div class="project-slide__bottom">
+			<p class="project-slide__stack">{{ item.stack }}</p>
+			<div class="project-slide__actions">
+				<button
+					class="button button--primary project-slide__action"
+					type="button"
+					data-preview-open
+					data-preview-src="./assets/projects/{{ item.fullImage }}"
+					data-preview-title="{{ item.name }}"
+				>
+					Посмотреть проект <span aria-hidden="true">↗</span>
+				</button>
+				<a
+					class="button button--outline project-slide__action"
+					href="{{ item.url }}"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Открыть код проекта {{ item.name }} на GitHub"
+				>
+					Код проекта <span aria-hidden="true">↗</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</article>

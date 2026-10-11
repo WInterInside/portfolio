@@ -1,0 +1,66 @@
+{% for item in featuredProjects %}
+	<section
+		class="featured-project featured-project--{{ item.slug }} section"
+		id="{{ item.id }}"
+		aria-labelledby="featured-{{ item.slug }}-title"
+	>
+		<div class="container featured-project__inner">
+			<div class="featured-project__copy" data-reveal>
+				<p class="eyebrow">
+					<span class="eyebrow__line"></span> {{ item.number }} / ОСОБЫЙ ПРОЕКТ
+				</p>
+				<p class="featured-project__label">{{ item.label }}</p>
+				<h2 class="featured-project__title" id="featured-{{ item.slug }}-title">
+					{{ item.titleFirst }}<br /><em>{{ item.titleSecond }}</em>
+				</h2>
+				<p class="featured-project__description">{{ item.description }}</p>
+				<div
+					class="featured-project__actions"
+					{% if not item.secondaryUrl %}data-single-action{% endif %}
+				>
+					<a
+						class="button button--light"
+						href="{{ item.url }}"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{{ item.buttonText }}
+						{% if item.isGame %}
+							<svg
+								class="featured-project__play-icon"
+								viewBox="0 0 24 24"
+								aria-hidden="true"
+							>
+								<path d="M7 4.5 19 12 7 19.5Z" fill="currentColor" />
+							</svg>
+						{% else %}
+							<span aria-hidden="true">↗</span>
+						{% endif %}
+					</a>
+					{% if item.secondaryUrl %}
+						<a
+							class="button featured-project__source"
+							href="{{ item.secondaryUrl }}"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Исходный код <span aria-hidden="true">↗</span>
+						</a>
+					{% endif %}
+				</div>
+				<p class="featured-project__stack">{{ item.stack }}</p>
+			</div>
+			<figure class="featured-project__visual" data-reveal>
+				<div class="featured-project__image-wrap">
+					<img
+						src="./assets/{{ item.image }}"
+						alt="{{ item.imageAlt }}"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+				<figcaption>{{ item.caption }}</figcaption>
+			</figure>
+		</div>
+	</section>
+{% endfor %}

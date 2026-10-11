@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+	{% include "components/head.njk" %}
+	<body>
+		<a class="skip-link" href="#main">Перейти к содержимому</a>
+		<div class="site-shell">
+			{% include "components/header.njk" %}
+			<main id="main">
+				{% include "components/hero.njk" %}
+				{% include "components/projects.njk" %}
+				{% include "components/featured-projects.njk" %}
+				{% include "components/luma.njk" %}
+				{% include "components/about.njk" %}
+				{% include "components/experience.njk" %}
+				{% include "components/contact.njk" %}
+			</main>
+			{% include "components/footer.njk" %}
+		</div>
+		<script type="module" src="./js/app.js"></script>
+	</body>
+</html>
