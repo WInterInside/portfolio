@@ -1,9 +1,10 @@
+{% from "components/snowflake.njk" import snowflake %}
 <header class="site-header" data-header>
 	<div class="site-header__inner container">
 		<a class="site-header__brand" href="#top" aria-label="WinterInside — к началу страницы">
 			<img
 				class="site-header__brand-mark"
-				src="./favicon.svg"
+				src="./assets/avatar-anime-crop.png"
 				alt=""
 				width="34"
 				height="34"
@@ -45,8 +46,11 @@
 			data-navigation
 		>
 			<a class="site-header__nav-link" href="#projects">Проекты</a>
-			<a class="site-header__nav-link" href="#about">Подход</a>
 			<a class="site-header__nav-link" href="#experience">Опыт</a>
+			<a class="site-header__nav-link site-header__nav-link--students" href="#students"
+				>Студентам {{ snowflake("site-header__student-icon") }}</a
+			>
+			<a class="site-header__nav-link" href="#student-reviews">Отзывы</a>
 			<a class="site-header__nav-link" href="#contact">Контакты</a>
 			<a
 				class="site-header__nav-cta"

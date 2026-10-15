@@ -1,0 +1,45 @@
+{% from "components/snowflake.njk" import snowflake %}
+<section class="students section" id="students" aria-labelledby="students-title">
+	<div class="container">
+		<div class="students__intro">
+			<div class="students__copy" data-reveal>
+				<p class="eyebrow"><span class="eyebrow__line"></span> 11 / СТУДЕНТАМ</p>
+				<h2 class="students__title" id="students-title">Учебный проект<br /><em>Понятный код</em></h2>
+				<p class="students__description">Помогаю с учебными веб-проектами по техническому заданию: от разбора требований и вёрстки до подготовки итоговой версии. Подробно объясняю решения и сопровождаю проект до сдачи.</p>
+				<a class="button button--primary students__link" href="https://t.me/WinterInside" target="_blank" rel="noopener noreferrer">Обсудить задание <svg class="button__telegram-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21 3-3.2 17-5.4-4.3-3.2 2.9.7-5.1L20.8 3.2 7.8 12.2 3 10.8 21 3Z" fill="currentColor" /></svg></a>
+			</div>
+			<div class="students__summary" data-reveal aria-label="Сопровождение от задания до сдачи">
+				<div class="students__summary-top"><span>PROJECT / SUPPORT</span>{{ snowflake() }}</div>
+				<div class="students__summary-route"><span>ТЗ</span><span class="students__summary-line" aria-hidden="true"></span><span>Сдача</span></div>
+				<p>Один понятный процесс: план, код, проверка и помощь с финальными правками.</p>
+				<div class="students__summary-bottom"><span>01 / 04</span><span>Всё по шагам</span></div>
+			</div>
+		</div>
+
+		<div class="students__benefits" aria-label="Что входит в работу">
+			<article class="students__benefit" data-reveal><span class="students__benefit-number">01 / РАЗБОР</span><h3>Подробная консультация</h3><p>Разбираем ТЗ, требования к страницам и вопросы по коду. Объясняю, как устроен проект и почему выбраны эти решения.</p></article>
+			<article class="students__benefit" data-reveal><span class="students__benefit-number">02 / РАЗРАБОТКА</span><h3>Чистая структура</h3><p>Верстаю адаптивные страницы с понятными файлами и классами. Если по заданию нужны только HTML и CSS, обходимся без конструкторов.</p></article>
+			<article class="students__benefit" data-reveal><span class="students__benefit-number">03 / ПРОЗРАЧНОСТЬ</span><h3>На вашем GitHub</h3><p>По договорённости веду проект в вашем репозитории: видны изменения, история работы и актуальная версия кода.</p></article>
+			<article class="students__benefit" data-reveal><span class="students__benefit-number">04 / ФИНИШ</span><h3>До самой сдачи</h3><p>Помогаю проверить результат по ТЗ, подготовить проект к показу и внести необходимые правки перед сдачей.</p></article>
+		</div>
+
+		<div class="students__process" data-student-process data-reveal>
+			<div class="students__process-heading"><div><span class="students__process-kicker">КАК ИДЁТ РАБОТА</span><h3>От задания до<br /><em>готового проекта</em></h3></div><p>Нажмите на этап, чтобы увидеть, что происходит на каждом шаге.</p></div>
+			<div class="students__steps" role="tablist" aria-label="Этапы учебного проекта">
+				<button class="students__step is-active" type="button" role="tab" id="student-step-1" aria-controls="student-panel-1" aria-selected="true" tabindex="0" data-student-step><span class="students__step-dot">01</span><span class="students__step-name">Задача</span></button>
+				<button class="students__step" type="button" role="tab" id="student-step-2" aria-controls="student-panel-2" aria-selected="false" tabindex="-1" data-student-step><span class="students__step-dot">02</span><span class="students__step-name">План</span></button>
+				<button class="students__step" type="button" role="tab" id="student-step-3" aria-controls="student-panel-3" aria-selected="false" tabindex="-1" data-student-step><span class="students__step-dot">03</span><span class="students__step-name">Код</span></button>
+				<button class="students__step" type="button" role="tab" id="student-step-4" aria-controls="student-panel-4" aria-selected="false" tabindex="-1" data-student-step><span class="students__step-dot">04</span><span class="students__step-name">Сдача</span></button>
+			</div>
+			<div class="students__panels">
+				<article class="students__panel" id="student-panel-1" role="tabpanel" aria-labelledby="student-step-1" data-student-panel><div><span>01 / НА СТАРТЕ</span><h4>Разбираем задание</h4></div><p>Смотрим требования, примеры, сроки и формат сдачи. После консультации понятно, что именно нужно сделать и какие материалы понадобятся.</p></article>
+				<article class="students__panel" id="student-panel-2" role="tabpanel" aria-labelledby="student-step-2" data-student-panel hidden><div><span>02 / ОСНОВА</span><h4>Собираем план</h4></div><p>Определяем страницы, блоки и структуру файлов. Согласуем порядок работы, чтобы каждый следующий шаг был понятен.</p></article>
+				<article class="students__panel" id="student-panel-3" role="tabpanel" aria-labelledby="student-step-3" data-student-panel hidden><div><span>03 / РЕАЛИЗАЦИЯ</span><h4>Пишем и проверяем код</h4></div><p>Делаю адаптивную вёрстку и показываю промежуточный результат. При желании работа идёт прямо в вашем GitHub-репозитории.</p></article>
+				<article class="students__panel" id="student-panel-4" role="tabpanel" aria-labelledby="student-step-4" data-student-panel hidden><div><span>04 / ФИНАЛ</span><h4>Готовимся к сдаче</h4></div><p>Сверяем результат с ТЗ, разбираем устройство проекта и доводим детали до финальной версии. Остаюсь на связи по вопросам перед сдачей.</p></article>
+			</div>
+		</div>
+		{% include "components/student-projects.njk" %}
+		{% include "components/student-evolution.njk" %}
+		{% include "components/student-reviews.njk" %}
+	</div>
+</section>

@@ -4,16 +4,16 @@
 			<div>
 				<p class="eyebrow"><span class="eyebrow__line"></span> 01 / ИЗБРАННОЕ</p>
 				<h2 class="section-heading__title" id="projects-title">
-					Проекты, в которых<br /><em>важны детали.</em>
+					Проекты, в которых<br /><em>важны детали</em>
 				</h2>
 			</div>
 			<p class="section-heading__aside">
-				От экспериментальных интерфейсов до сайтов с чёткой деловой задачей.
+				От выразительных портфолио до сайтов с чёткой деловой задачей.
 			</p>
 		</div>
 	</div>
 
-	<div class="project-showcase" data-carousel aria-label="Избранные проекты">
+	<div class="project-showcase" data-carousel data-reveal aria-label="Избранные проекты">
 		<div
 			class="project-showcase__viewport"
 			tabindex="0"
@@ -30,22 +30,13 @@
 		</div>
 		<div class="project-showcase__controls container">
 			<div class="project-showcase__counter" aria-live="polite" aria-atomic="true">
-				<strong data-carousel-current>01</strong
+				<strong data-carousel-current>{% for item in projects %}{% if item.slug == 'fishart' %}{{ loop.index | padNumber }}{% endif %}{% endfor %}</strong
 				><span>/ {{ projects.length | padNumber }}</span>
 			</div>
 			<div class="project-showcase__progress" aria-hidden="true">
 				<span data-carousel-progress></span>
 			</div>
 			<div class="project-showcase__actions">
-				<button
-					class="icon-button"
-					type="button"
-					data-carousel-pause
-					aria-label="Приостановить автоматическое переключение"
-					aria-pressed="false"
-				>
-					Ⅱ
-				</button>
 				<button
 					class="icon-button"
 					type="button"
@@ -68,7 +59,7 @@
 	<dialog class="project-preview" data-project-preview aria-labelledby="project-preview-title">
 		<div class="project-preview__header">
 			<div>
-				<span class="project-preview__eyebrow">ПРОСМОТР ПРОЕКТА</span>
+				<span class="project-preview__eyebrow" data-preview-eyebrow>ПРОСМОТР ПРОЕКТА</span>
 				<h3
 					class="project-preview__title"
 					id="project-preview-title"
@@ -98,7 +89,7 @@
 			class="project-preview__scroll"
 			data-preview-scroll
 			tabindex="0"
-			aria-label="Прокручиваемый снимок страницы проекта"
+			aria-label="Прокручиваемый снимок проекта или письма"
 		>
 			<img class="project-preview__image" data-preview-image alt="" />
 		</div>

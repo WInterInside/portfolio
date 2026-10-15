@@ -4,6 +4,7 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { series, watch } from "gulp";
+import { build as bundleJavaScript } from "esbuild";
 import stylus from "stylus";
 import nunjucks from "nunjucks";
 
@@ -69,15 +70,20 @@ async function compile() {
 	const minifiedStylesheet = await renderStylesheet(true);
 	fs.writeFileSync(path.join(output, "css/style.min.css"), minifiedStylesheet);
 
-	// Browser-native ES modules preserve clear imports and separate responsibilities.
-	fs.cpSync(path.join(source, "js"), path.join(output, "js"), { recursive: true });
+	// Bundle source modules into a classic script so build/index.html works via file://.
+	await bundleJavaScript({
+		entryPoints: [path.join(source, "js/app.js")],
+		outfile: path.join(output, "js/app.js"),
+		bundle: true,
+		format: "iife",
+		platform: "browser",
+		target: "es2018",
+	});
 
 	for (const folder of ["assets", "fonts"]) {
 		const from = path.join(source, folder);
 		if (fs.existsSync(from)) fs.cpSync(from, path.join(output, folder), { recursive: true });
 	}
-	const favicon = path.join(source, "favicon.svg");
-	if (fs.existsSync(favicon)) fs.copyFileSync(favicon, path.join(output, "favicon.svg"));
 }
 
 export const build = series(clean, compile);
@@ -145,6 +151,7 @@ async function serveBuild() {
 		".jpg": "image/jpeg",
 		".jpeg": "image/jpeg",
 		".png": "image/png",
+		".mp4": "video/mp4",
 		".svg": "image/svg+xml",
 		".webp": "image/webp",
 		".woff": "font/woff",

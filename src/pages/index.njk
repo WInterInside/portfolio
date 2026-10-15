@@ -10,12 +10,17 @@
 				{% include "components/projects.njk" %}
 				{% include "components/featured-projects.njk" %}
 				{% include "components/luma.njk" %}
-				{% include "components/about.njk" %}
+				{% include "components/emails.njk" %}
 				{% include "components/experience.njk" %}
+				{% include "components/toolkit.njk" %}
+				{% include "components/libraries.njk" %}
+				{% include "components/about.njk" %}
+				{% include "components/students.njk" %}
 				{% include "components/contact.njk" %}
 			</main>
 			{% include "components/footer.njk" %}
 		</div>
-		<script type="module" src="./js/app.js"></script>
+		{% include "components/dock-navigation.njk" %}
+		<script defer src="./js/app.js"></script>
 	</body>
 </html>

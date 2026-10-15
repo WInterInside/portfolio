@@ -53,11 +53,18 @@
 			<figure class="featured-project__visual" data-reveal>
 				<div class="featured-project__image-wrap">
 					<img
-						src="./assets/{{ item.image }}"
+						class="featured-project__image"
+						src="./assets/{% if item.slug == 'bird' %}stopokno-featured-bg.png{% else %}{{ item.image }}{% endif %}"
 						alt="{{ item.imageAlt }}"
 						loading="lazy"
 						decoding="async"
 					/>
+					{% if item.slug == 'bird' %}
+						<img class="featured-project__bird" src="./assets/bird-frames/frame-00.png" alt="" aria-hidden="true" loading="lazy" data-bird-frame />
+					{% endif %}
+					{% if item.slug == 'perimeter' %}
+						<div class="featured-project__fire" aria-hidden="true"><span class="featured-project__flame featured-project__flame--one"></span><span class="featured-project__flame featured-project__flame--two"></span><span class="featured-project__flame featured-project__flame--three"></span><i></i><i></i><i></i><i></i></div>
+					{% endif %}
 				</div>
 				<figcaption>{{ item.caption }}</figcaption>
 			</figure>

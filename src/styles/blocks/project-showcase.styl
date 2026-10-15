@@ -1,0 +1,93 @@
+.project-showcase {
+	position: relative;
+
+	&__viewport {
+		position: relative;
+		height: 600px;
+		outline-offset: -8px;
+		touch-action: pan-y;
+		cursor: grab;
+	}
+
+	&__viewport:active {
+		cursor: grabbing;
+	}
+
+	&__track {
+		position: relative;
+		height: 100%;
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+
+	&__counter {
+		display: flex;
+		gap: 5px;
+		align-items: baseline;
+		min-width: 78px;
+		color: #9aabb8;
+		font-size: 13px;
+	}
+
+	&__counter strong {
+		color: var(--ink);
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	&__progress {
+		height: 2px;
+		flex: 1;
+		overflow: hidden;
+		background: #dce5ed;
+	}
+
+	&__progress span {
+		display: block;
+		width: 0;
+		height: 100%;
+		background: #85b6d8;
+		transition: width 0.9s var(--ease);
+	}
+
+	&__actions {
+		display: flex;
+		gap: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.project-showcase {
+		&__viewport {
+			height: 680px;
+		}
+
+		&__controls {
+			gap: 15px;
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.project-showcase {
+		&__viewport {
+			height: 710px;
+		}
+	}
+}
+
+@media (max-width: 374px) {
+	.project-showcase {
+		&__controls {
+			gap: 8px;
+		}
+
+		&__counter {
+			min-width: 55px;
+		}
+	}
+}

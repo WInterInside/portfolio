@@ -1,0 +1,30 @@
+{% if studentReviews and studentReviews.length %}
+<section class="student-reviews" id="student-reviews" aria-labelledby="student-reviews-title" data-review-slider>
+	<div class="student-reviews__heading" data-reveal>
+		<div><p class="eyebrow"><span class="eyebrow__line"></span> ОТЗЫВЫ / ВЁРСТКА САЙТОВ</p><h3 id="student-reviews-title">Слова тех, <em>с кем работал</em></h3></div>
+		<p>Отзывы с Авито о проектах по вёрстке сайтов.</p>
+	</div>
+	<div class="student-reviews__viewport" data-review-viewport role="region" aria-label="Отзывы о вёрстке сайтов" tabindex="0">
+	<div class="student-reviews__track">
+		{% for review in studentReviews %}
+		<figure class="student-reviews__card">
+			<div class="student-reviews__rating" aria-label="Оценка: 5 из 5">
+				{% for star in range(5) %}<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m10 1.5 2.55 5.17 5.7.83-4.13 4.02.98 5.68L10 14.52 4.9 17.2l.98-5.68L1.75 7.5l5.7-.83L10 1.5Z" fill="currentColor" /></svg>{% endfor %}
+				<span>Вёрстка сайтов</span>
+			</div>
+			<blockquote>«{{ review.text }}»</blockquote>
+			<figcaption>
+				<span><strong>{{ review.author }}</strong>{% if review.date %}<small>{{ review.date }}</small>{% endif %}</span>
+				<button class="student-reviews__original" type="button" data-preview-open data-preview-kind="отзыв" data-preview-title="Отзыв: {{ review.author }}" data-preview-src="./assets/reviews/{{ review.image }}" aria-label="Открыть исходный скриншот отзыва {{ review.author }}">Оригинал <span aria-hidden="true">↗</span></button>
+			</figcaption>
+		</figure>
+		{% endfor %}
+	</div>
+	</div>
+	<div class="student-reviews__controls" data-reveal>
+		<span class="student-reviews__count" aria-live="polite"><span data-review-current>01</span> / <span data-review-total>03</span></span>
+		<span class="student-reviews__progress" aria-hidden="true"><span data-review-progress></span></span>
+		<div class="student-reviews__arrows"><button type="button" data-review-prev aria-label="Предыдущие отзывы" disabled>←</button><button type="button" data-review-next aria-label="Следующие отзывы">→</button></div>
+	</div>
+</section>
+{% endif %}

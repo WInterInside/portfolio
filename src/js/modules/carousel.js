@@ -6,18 +6,12 @@ export const initCarousel = () => {
 	const slides = [...carousel.querySelectorAll("[data-slide]")];
 	const previousButton = carousel.querySelector("[data-carousel-prev]");
 	const nextButton = carousel.querySelector("[data-carousel-next]");
-	const pauseButton = carousel.querySelector("[data-carousel-pause]");
 	const currentNumber = carousel.querySelector("[data-carousel-current]");
 	const progress = carousel.querySelector("[data-carousel-progress]");
-	const previewDialog = document.querySelector("[data-project-preview]");
-	const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-	if (!viewport || slides.length < 2) return;
+	if (!viewport || !previousButton || !nextButton || !currentNumber || !progress || slides.length < 2) return;
 
-	let currentIndex = 0;
-	let timerId = null;
-	let manuallyPaused = false;
-	let isVisible = false;
+	let currentIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("project-slide--fishart")));
 	let pointerStart = null;
 
 	const render = (announce = false) => {
@@ -44,49 +38,13 @@ export const initCarousel = () => {
 		carousel.dispatchEvent(new CustomEvent("carousel:change", { detail: { currentIndex } }));
 	};
 
-	const stopTimer = () => {
-		if (timerId !== null) window.clearInterval(timerId);
-		timerId = null;
-	};
-
-	const canAutoplay = () =>
-		isVisible &&
-		!manuallyPaused &&
-		!reducedMotion.matches &&
-		!document.hidden &&
-		!previewDialog?.open &&
-		(!carousel.contains(document.activeElement) || document.activeElement === pauseButton);
-
-	const startTimer = () => {
-		stopTimer();
-		if (!canAutoplay()) return;
-		timerId = window.setInterval(() => {
-			currentIndex = (currentIndex + 1) % slides.length;
-			render();
-		}, 6500);
-	};
-
 	const goTo = (index) => {
 		currentIndex = (index + slides.length) % slides.length;
 		render(true);
-		startTimer();
 	};
 
 	previousButton.addEventListener("click", () => goTo(currentIndex - 1));
 	nextButton.addEventListener("click", () => goTo(currentIndex + 1));
-
-	pauseButton.addEventListener("click", () => {
-		manuallyPaused = !manuallyPaused;
-		pauseButton.setAttribute("aria-pressed", String(manuallyPaused));
-		pauseButton.setAttribute(
-			"aria-label",
-			manuallyPaused
-				? "Возобновить автоматическое переключение"
-				: "Приостановить автоматическое переключение",
-		);
-		pauseButton.textContent = manuallyPaused ? "▶" : "Ⅱ";
-		startTimer();
-	});
 
 	viewport.addEventListener("keydown", (event) => {
 		if (event.target !== viewport) return;
@@ -126,25 +84,5 @@ export const initCarousel = () => {
 		pointerStart = null;
 	});
 
-	carousel.addEventListener("focusin", stopTimer);
-	carousel.addEventListener("focusout", () => window.setTimeout(startTimer, 0));
-	document.addEventListener("project-preview:change", startTimer);
-	document.addEventListener("visibilitychange", startTimer);
-	reducedMotion.addEventListener("change", startTimer);
-
-	if ("IntersectionObserver" in window) {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				isVisible = entry.isIntersecting;
-				startTimer();
-			},
-			{ threshold: 0.2 },
-		);
-		observer.observe(carousel);
-	} else {
-		isVisible = true;
-	}
-
 	render();
-	startTimer();
 };

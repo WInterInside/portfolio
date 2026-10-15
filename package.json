@@ -11,6 +11,7 @@
 		"format": "prettier --write \"src/**/*.{js,njk,json,md}\" gulpfile.mjs README.md package.json .prettierrc.json .stylusrc.json && stylus-supremacy format \"src/styles/**/*.styl\" --replace --options .stylusrc.json"
 	},
 	"devDependencies": {
+		"esbuild": "^0.28.2",
 		"gulp": "5.0.1",
 		"gulp-cli": "3.1.0",
 		"nunjucks": "^3.2.4",

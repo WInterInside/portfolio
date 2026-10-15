@@ -1,0 +1,40 @@
+.button {
+	&--outline {
+		border-color: #c8d9e4;
+		background: transparent;
+		color: #2c4b61;
+	}
+
+	&--outline:hover {
+		border-color: #80aeca;
+		background: #eaf4fa;
+		color: #1e5e88;
+	}
+}
+
+.icon-button {
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #cfdde7;
+	border-radius: 50%;
+	background: transparent;
+	color: #22333f;
+	font-size: 20px;
+	cursor: pointer;
+	transition: color 0.25s, border-color 0.25s, background 0.25s;
+
+	&:hover {
+		border-color: #a3c4db;
+		background: #e7f2f9;
+		color: #347bab;
+	}
+}
+
+@media (max-width: 374px) {
+	.icon-button {
+		width: 39px;
+		height: 39px;
+	}
+}

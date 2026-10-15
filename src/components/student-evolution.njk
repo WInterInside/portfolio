@@ -1,0 +1,40 @@
+<section class="student-evolution" id="student-evolution" aria-labelledby="student-evolution-title">
+	<div class="student-evolution__main">
+		<div class="student-evolution__copy" data-reveal>
+			<p class="eyebrow"><span class="eyebrow__line"></span> 04 / СТУДЕНЧЕСКИЙ КЕЙС</p>
+			<span class="student-evolution__label">ИНТЕРАКТИВНЫЙ ПРОЕКТ / РАЗБОР</span>
+			<h3 id="student-evolution-title">Evolution</h3>
+			<p class="student-evolution__lead">Мануал по созданию нейрочип-капсулы превращён в последовательный цифровой опыт. Посетитель собирает профиль, выбирает корпус и проходит активацию.</p>
+			<div class="student-evolution__actions">
+				<button class="button button--light" type="button" data-preview-open data-preview-title="Evolution — полный снимок проекта" data-preview-src="./assets/projects/evolution-full.jpg">Посмотреть проект <span aria-hidden="true">↗</span></button>
+				<a class="button student-evolution__source" href="https://github.com/WInterInside/evolution" target="_blank" rel="noopener noreferrer">Исходный код <span aria-hidden="true">↗</span></a>
+			</div>
+			<p class="student-evolution__stack">HTML · SCSS · JavaScript · Gulp</p>
+		</div>
+		<figure class="student-evolution__preview" data-reveal>
+			<div class="student-evolution__preview-top"><span>EVOLUTION / CONFIGURATOR</span><span>01 — 03</span></div>
+			<img src="./assets/projects/evolution-cover.jpg" alt="Первый экран Evolution с ярко-зелёным фоном и этапами создания капсулы" loading="lazy" />
+			<figcaption>Профиль → корпус → активация</figcaption>
+		</figure>
+	</div>
+	<div class="student-evolution__breakdown">
+		<div class="student-evolution__breakdown-heading" data-reveal>
+			<span>КАК УСТРОЕН ПРОЕКТ</span>
+			<p>Три связанных этапа с собственным действием на каждом экране</p>
+		</div>
+		<div class="student-evolution__steps">
+			<article class="student-evolution__step" data-reveal>
+				<div class="student-evolution__step-art student-evolution__step-art--profile"><span>01 / PROFILE</span><img src="./assets/evolution/profile-state.png" alt="" loading="lazy" /></div>
+				<div class="student-evolution__step-copy"><span>01 / НАСТРОЙКА</span><h4>Собрать профиль</h4><p>Карточки способностей перетаскиваются на модель. Можно выбрать до трёх модулей, после чего профиль получает своё состояние.</p></div>
+			</article>
+			<article class="student-evolution__step" data-reveal>
+				<div class="student-evolution__step-art student-evolution__step-art--corpus"><span>02 / CORPUS</span><img src="./assets/evolution/capsule.png" alt="" loading="lazy" /></div>
+				<div class="student-evolution__step-copy"><span>02 / ВЫБОР</span><h4>Выбрать корпус</h4><p>Корпусы показаны в слайдере. Подсказки раскрывают характеристики, а выбранный вариант переходит к финальному этапу.</p></div>
+			</article>
+			<article class="student-evolution__step" data-reveal>
+				<div class="student-evolution__step-art student-evolution__step-art--activation"><span>03 / ACTIVATION</span><div class="student-evolution__maze"><img src="./assets/evolution/maze.png" alt="" loading="lazy" /><span class="student-evolution__maze-start" aria-hidden="true"></span></div></div>
+				<div class="student-evolution__step-copy"><span>03 / ФИНАЛ</span><h4>Пройти активацию</h4><p>В мини-игре на Canvas нужно провести элемент по траектории, не касаясь стенок. Управление работает мышью и касанием; успешное прохождение завершает сценарий.</p></div>
+			</article>
+		</div>
+	</div>
+</section>

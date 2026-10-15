@@ -1,9 +1,9 @@
 <article
 	class="project-slide project-slide--{{ item.slug }}"
 	data-slide
-	data-state="{% if loop.first %}active{% else %}hidden{% endif %}"
+	data-state="{% if item.slug == 'fishart' %}active{% else %}hidden{% endif %}"
 	aria-label="{{ item.number }}: {{ item.name }}"
-	{% if not loop.first %}aria-hidden="true" inert{% endif %}
+	{% if item.slug != 'fishart' %}aria-hidden="true" inert{% endif %}
 >
 	<div class="project-slide__visual" aria-hidden="true">
 		<span class="project-slide__visual-index">{{ item.number }} / SELECTED WORK</span>
