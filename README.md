@@ -1,10 +1,10 @@
 # Winter Page
 
-Одностраничное портфолио WinterInside. Проект создан на основе локального **winter-dev-pack**: сохранены Gulp, Nunjucks, Stylus, шрифт Gilroy и зимняя палитра. Исходный `winter-dev-pack` не изменялся.
+Одностраничное портфолио WinterInside. Проект создан на основе локального **winter-dev-pack**: сохранены Nunjucks, Stylus, шрифт Gilroy и зимняя палитра. Исходный `winter-dev-pack` не изменялся.
 
 ## Запуск
 
-Нужен Node.js. В папке проекта выполните:
+Нужен Node.js 20 или новее (версия 22.14.0 указана в `.nvmrc`). Если используете nvm-windows, сначала переключите версию командой `nvm use 22.14.0`. Затем в папке проекта выполните:
 
 ```bash
 npm install
@@ -31,7 +31,7 @@ npm run build
 | Стили секций по БЭМ                      | `src/styles/blocks/`                |
 | Точка входа JavaScript                   | `src/js/app.js`                     |
 | Отдельные функции JavaScript             | `src/js/modules/`                   |
-| Сборка и локальный сервер                | `gulpfile.mjs`                      |
+| Сборка и локальный сервер                | `site.mjs`                          |
 
 Для нового проекта добавьте объект в массив `projects` в `src/data.json`. Поле `slug` становится БЭМ-модификатором карточки (`project-slide--slug`); для цвета обложки добавьте правило в `src/styles/blocks/projects.styl`. Поля `coverImage` и `fullImage` указывают на файлы в `src/assets/projects/`: первый показывается в карточке, второй — в прокручиваемом модальном окне. Счётчик карусели вычисляется автоматически. Первым открывается FishArt Tattoo; выбор стартового слайда задан в `src/components/project-slide.njk` и `src/js/modules/carousel.js`.
 
@@ -47,7 +47,7 @@ Luma представлен отдельным экраном после осо�
 
 Фотография создана во встроенном режиме ImageGen. Финальный запрос: “Create a dark, atmospheric winter forest photograph for the rear tilted card of a refined developer portfolio website. Tall snow-covered fir and spruce trees at blue hour, dense shadowy evergreens, deep midnight navy and cold slate-blue tones, restrained mist and soft snowfall, subtle natural light filtering through the trees, high contrast enough to read as an evocative landscape at small crop size. Moody, cinematic, sophisticated and realistic; quiet rather than horror. No people, buildings, logos, letters, text, graphics, or borders. Compose vertically with meaningful trees and snowy depth throughout, suitable for a tall rounded card crop.”
 
-Исходный JavaScript разделён на ES-модули. `app.js` импортирует и запускает модули меню, карусели проектов, модального окна, вкладок и появления секций. При сборке Gulp объединяет их в один обычный скрипт `build/js/app.js`, который работает при открытии страницы из папки. Карусель поддерживает кнопки, клавиатуру и свайп; автоматическое переключение проектов приостанавливается, пока открыто модальное окно. Настройка уменьшения движения также учитывается.
+Исходный JavaScript разделён на ES-модули. `app.js` импортирует и запускает модули меню, карусели проектов, модального окна, вкладок и появления секций. При сборке esbuild объединяет их в один обычный скрипт `build/js/app.js`, который работает при открытии страницы из папки. Карусель поддерживает кнопки, клавиатуру и свайп; автоматическое переключение проектов приостанавливается, пока открыто модальное окно. Настройка уменьшения движения также учитывается.
 
 Разметка семантичная; классы разделены на блоки, элементы и модификаторы по БЭМ. `prefers-reduced-motion` отключает декоративное движение. Вкладки и меню поддерживают управление клавиатурой и ARIA-атрибуты.
 

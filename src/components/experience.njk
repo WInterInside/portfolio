@@ -28,7 +28,7 @@
 				<ol class="experience__timeline">
 					{% for job in jobs %}
 						<li
-							class="experience__job{% if job.current %}experience__job--current{% endif %}"
+							class="experience__job{% if job.current %} experience__job--current{% endif %}"
 						>
 							<div class="experience__job-header">
 								<h4>{{ job.company }}</h4>
